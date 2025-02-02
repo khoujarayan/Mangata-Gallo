@@ -1,0 +1,307 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+/*          Body             */
+body {
+    background-color: #FFFFF0;
+    margin: 5vw;
+    font-family: 'Montserrat', Arial, sans-serif;
+    animation: fade-in 2s ease-in-out;
+}
+
+h1,h2 {
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: #111111;
+}
+
+h2 {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    color: #222222;
+    text-align: center;
+}
+
+p {
+    margin-top: 1em;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #444444;
+    line-height: 1.6;
+    margin-bottom: 1em;
+    text-align: justify;
+}
+
+
+/*          Header            */
+header > img {
+    width: 90vw;
+}
+
+nav {
+    background-color: #d1c7bd;
+    padding: 1em;
+    border-radius: 15px;
+    margin-bottom: 1.5em;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #222222;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: #C2A878;
+    transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: #C2A878;
+}
+
+
+
+/*          Main Grid            */
+section {
+    margin-bottom: 2rem;
+}
+
+.promotion {
+    width: 90vw;
+    height: 20vh;
+    background-image: url(image/promotion.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+}
+
+.promotion h1, .promotion p {
+    margin-left: 1rem;
+}
+
+.about_us {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+}
+
+.about_us article {
+    display: grid;
+    place-items: center;
+}
+
+article {
+    padding: 1em;
+    background-color: #e5e5e5;
+    border-radius: 5%;
+}
+
+article > img {
+    margin: 1em;
+    width: 15vw;
+    height: 20vh;
+    border-radius: 10px;
+    transition: transform 0.4s ease-in-out;
+}
+
+article img:hover {
+    transform: scale(1.05);
+}
+
+
+/*          Footer Grid           */
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.footer_logo img {
+    width: 10vw;
+}
+
+.footer_logo img:hover {
+    scale: 0.99;
+}
+
+.copyright p {
+    text-align: end;
+    border-top: solid 0.2em #322d29;
+}
+
+
+/* Pour les écrans avec une largeur de 768px ou moins */
+@media (max-width: 768px) {
+    body {
+        margin: 2vw;
+    }
+
+    header>img {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+    }
+
+    h2 {
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    nav {
+        padding: 0.8em;
+        border-radius: 12px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        display: inline-block;
+        padding-bottom: 5px;
+        border-bottom: #111111 solid 1px;
+    }
+
+    .promotion {
+        height: 30vh;
+    }
+
+    .promotion h1,
+    .promotion p {
+        margin-left: 2rem;
+    }
+
+    .about_us {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about_us article {
+        width: 100%;
+        max-width: 100%;
+        padding: 1em;
+        box-sizing: border-box;
+    }
+
+    article>img {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+        border-radius: 15px;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer_logo img {
+        width: 20vw;
+    }
+
+    .copyright p {
+        font-size: 0.9rem;
+    }
+}
